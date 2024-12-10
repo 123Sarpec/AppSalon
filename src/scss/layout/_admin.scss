@@ -1,0 +1,49 @@
+@use 'base/variables' as v;
+
+.citas{
+    list-style: none;
+    padding: 3;
+
+    li{
+        padding: 3rem;
+        border-top: 1px solid v.$blanco;
+        border-radius: 2rem;
+
+        .total{
+            text-align: right;
+            background-color: rgba(255, 255, 255, 0.042);
+            
+        }
+        p{
+            font-weight: v.$bold;
+            color: v.$azul;
+        }
+            span{
+                font-weight: v.$regular;
+                color: v.$blanco;
+            }
+                .servicio{
+                    color: v.$blanco;
+                    background-color: #4c5e6c61; // Fondo para servicios
+                }
+            
+        }
+    
+}
+
+.servicios {
+    @extend .citas;
+
+    .acciones {
+        margin: 0;
+    }
+
+    .boton,
+    .boton-eliminar {
+        margin: 0;
+        border-radius: 1rem;
+        width: 200px; /* Ancho fijo */
+    }
+}
+
+
