@@ -77,5 +77,5 @@ export function dev() {
 }
 
 // Tareas predeterminadas
-export default series(js, css, imagenes, dev);
+export default series(js, css, imagenes, dev, );
 export const build = parallel(css, js, imagenes);

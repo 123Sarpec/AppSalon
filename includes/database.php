@@ -1,7 +1,7 @@
 <?php
 
 $db = mysqli_connect(
-    $_ENV['DB_HOST'],
+    $_ENV['BD_HOST'],
     $_ENV['BD_USER'],
     $_ENV['BD_PASS'],
     $_ENV['BD_NAME'],
@@ -18,4 +18,5 @@ if (!$db) {
     echo "errno de depuración: " . mysqli_connect_errno();
     echo "error de depuración: " . mysqli_connect_error();
     exit;
+
 }
