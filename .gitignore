@@ -2,6 +2,7 @@
 
 
 
-node_modules
-vendor
-includes/.env
+/node_modules/
+/vendor/
+/src/
+.env
