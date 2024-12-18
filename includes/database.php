@@ -5,6 +5,7 @@ $db = mysqli_connect(
     $_ENV['BD_USER'],
     $_ENV['BD_PASS'],
     $_ENV['BD_NAME'],
+    $_ENV['BD_PORT'],
 );
 
 
