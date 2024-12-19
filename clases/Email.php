@@ -20,7 +20,7 @@ class Email
         // Crear objeto PHPMailer
         $mail = new PHPMailer();
         $mail->isSMTP();
-        $mail->Host = $ENV['EMAIL_HOST'];
+        $mail->Host = $_ENV['EMAIL_HOST'];
         $mail->SMTPAuth = true;
         $mail->Port = $_ENV['EMAIL_PORT'];
         $mail->Username = $_ENV['EMAIL_USER'];
@@ -33,11 +33,11 @@ class Email
         $mail->isHTML(true); // Activar el formato HTML
         $mail->CharSet = 'UTF-8'; // Configurar el juego de caracteres UTF-8
 
-        $mail = "<html>";
-        $mail .= "<p><strong>Hola " . $this->email . "</strong> Has creado una cuenta en AppSalon,Solo debes cofirmar la cuenta presionando el siguiente enlace:</p>";
-        $mail .= "<p> Haz Clic Aquí <a href='" . $_ENV['APP_URL'] . "/confirmar-cuenta?token=" . $this->token . "'>Confirmar Cuenta</a></p>";
-        $mail .= "<p>Si no fuiste tú, ignora este mensaje, o verifica tu correo. </p>";
-        $mail .= "</html>";
+        $contenido = "<html>";
+        $contenido .= "<p><strong>Hola " . $this->email . "</strong> Has creado una cuenta en AppSalon,Solo debes cofirmar la cuenta presionando el siguiente enlace:</p>";
+        $contenido .= "<p> Haz Clic Aquí <a href='" . $_ENV['APP'] . "/confirmar-cuenta?token=" . $this->token . "'>Confirmar Cuenta</a></p>";
+        $contenido .= "<p>Si no fuiste tú, ignora este mensaje, o verifica tu correo. </p>";
+        $contenido .= "</html>";
         $mail->Body = $contenido;
 
         // Enviar email
@@ -47,7 +47,7 @@ class Email
                 // Crear objeto PHPMailer
                 $mail = new PHPMailer();
                 $mail->isSMTP();
-                $mail->Host = $ENV['EMAIL_HOST'];
+                $mail->Host = $_ENV['EMAIL_HOST'];
                 $mail->SMTPAuth = true;
                 $mail->Port = $_ENV['EMAIL_PORT'];
                 $mail->Username = $_ENV['EMAIL_USER'];
@@ -62,7 +62,7 @@ class Email
         
                 $contenido = "<html>";
                 $contenido .= "<p><strong>Hola " . $this->nombre . "</strong> Has solicitado restableces tu Contraseña, presiona en el siguiente enlace:</p>";
-                $contenido .= "<p> Haz Clic Aquí <a href='" . $_ENV['APP_URL'] . "/recuperar?token=" . $this->token . "'>Restablecer Contraseña</a></p>";
+                $contenido .= "<p> Haz Clic Aquí <a href='" . $_ENV['APP'] . "/recuperar?token=" . $this->token . "'>Restablecer Contraseña</a></p>";
                 $contenido .= "<p>Si no fuiste tú, ignora este mensaje, o verifica tu correo. </p>";
                 $contenido .= "</html>";
                 $mail->Body = $contenido;
